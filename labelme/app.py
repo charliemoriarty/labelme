@@ -406,6 +406,7 @@ class MainWindow(QtWidgets.QMainWindow):
         removePoint = action(
             text="Remove Selected Point",
             slot=self.canvas.removeSelectedPoint,
+            shortcut=shortcuts["remove_selected_point"],
             icon="edit",
             tip="Remove selected point from polygon",
             enabled=False,
@@ -600,7 +601,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 undoLastPoint,
                 None,
                 addPointToEdge,
-                None,
+                removePoint,
                 toggle_keep_prev_mode,
             ),
             # menu shown at right click
@@ -723,7 +724,7 @@ class MainWindow(QtWidgets.QMainWindow):
             fitWidth,
         )
 
-        self.statusBar().showMessage(self.tr("%s started.") % __appname__)
+        self.statusBar().showMessage(self.tr("%s started. Using local version.") % __appname__)
         self.statusBar().show()
 
         if output_file is not None and self._config["auto_save"]:
