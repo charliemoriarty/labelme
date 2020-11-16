@@ -724,7 +724,7 @@ class MainWindow(QtWidgets.QMainWindow):
             fitWidth,
         )
 
-        self.statusBar().showMessage(self.tr("%s started. Using local version.") % __appname__)
+        self.statusBar().showMessage(self.tr("%s started.") % __appname__)
         self.statusBar().show()
 
         if output_file is not None and self._config["auto_save"]:
